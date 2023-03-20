@@ -19,6 +19,7 @@ while not do_completion and index < len(args.pregunta):
     index+=1 
 
 if do_completion:
+    # HERE WE NEED A TOKEN FROM THE OPENAI API
     openai.api_key = token
     completion = openai.Completion.create(engine = "text-davinci-003", prompt = args.pregunta, max_tokens = 3000)
     response = completion.choices[0].text[1:]
